@@ -57,3 +57,23 @@ class Config:
             "password": Config.db_password(),
             "name": Config.db_name()
         }
+
+    @staticmethod
+    def smtp_server():
+        return "smtp.gmail.com"
+
+    @staticmethod
+    def smtp_user():
+        return "smart.birthday.notifier@gmail.com"
+
+    @staticmethod
+    def smtp_password():
+        return "%birthdaynotifier%"
+
+    @staticmethod
+    def smtp():
+        return {
+            "server": Config.smtp_server(),
+            "user": Config.smtp_user(),
+            "password": Config.smtp_password()
+        }
