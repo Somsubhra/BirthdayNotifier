@@ -33,6 +33,7 @@ except Exception as e:
     print e.message
     exit()
 
+to_addresses.append(smtp_config["user"])
 to_address = ";".join(to_addresses)
 
 birthdays_today = []
