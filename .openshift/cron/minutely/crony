@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+if [ `date +%H:%M` == "00:05" ]
+then
+    cd $OPENSHIFT_REPO_DIR
+    python notifier.py
+fi

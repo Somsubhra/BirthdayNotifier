@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd $OPENSHIFT_REPO_DIR
-python notifier.py
