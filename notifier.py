@@ -35,8 +35,6 @@ except Exception as e:
 
 to_address = ";".join(to_addresses)
 
-print to_address
-
 birthdays_today = []
 
 try:
@@ -61,8 +59,6 @@ except Exception as e:
     print e.message
     exit()
 
-print ";".join(birthdays_today)
-exit()
 
 try:
     msg = "\r\n".join([
@@ -70,7 +66,7 @@ try:
         "To: " + to_address,
         "Subject: Birthday Notifications",
         "",
-        "Test message"
+        "Birthdays today: " + ", ".join(birthdays_today)
     ])
 
     server = smtplib.SMTP_SSL(smtp_config["server"], 465)
