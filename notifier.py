@@ -1,6 +1,7 @@
 import smtplib
 import MySQLdb as mdb
 import datetime
+import pytz
 
 from etc import Config
 
@@ -39,7 +40,8 @@ to_address = ";".join(to_addresses)
 birthdays_today = []
 
 try:
-    now = datetime.datetime.now()
+    tz = pytz.timezone('Asia/Kolkata')
+    now = datetime.datetime.now(tz)
     month = now.strftime("%m")
     day = now.strftime("%d")
 
