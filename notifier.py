@@ -16,7 +16,7 @@ db_conn = mdb.connect(db_config["host"],
 to_addresses = []
 
 try:
-    query = "SELECT email from users"
+    query = "SELECT DISTINCT(email) from users"
     db_cursor = db_conn.cursor()
     db_cursor.execute(query)
 
@@ -43,7 +43,7 @@ try:
     month = now.strftime("%m")
     day = now.strftime("%d")
 
-    query = "SELECT name FROM users WHERE MONTH(birthday) = %s AND DAY(birthday) = %s"
+    query = "SELECT DISTINCT(name) FROM users WHERE MONTH(birthday) = %s AND DAY(birthday) = %s"
     db_cursor = db_conn.cursor()
     db_cursor.execute(query, (month, day))
 
