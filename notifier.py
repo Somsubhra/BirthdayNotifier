@@ -73,7 +73,7 @@ try:
     server = smtplib.SMTP_SSL(smtp_config["server"], 465)
     server.ehlo()
     server.login(smtp_config["user"], smtp_config["password"])
-    server.sendmail(from_addr=smtp_config["user"], to_addrs=to_address, msg=msg)
+    server.sendmail(from_addr=smtp_config["user"], to_addrs=to_addresses, msg=msg)
     server.close()
 except Exception as e:
     print e.message
